@@ -6,7 +6,7 @@ return {
 		themes = {
 			{
 				name = "night",
-				colorscheme =  "kanagawa-dragon",
+				colorscheme = "kanagawa-dragon",
 			},
 			{
 				name = "day",
@@ -15,7 +15,7 @@ return {
 			{
 				name = "noon",
 				colorscheme = "kanagawa-wave",
-			}
-		}
-	}
+			},
+		},
+	},
 }

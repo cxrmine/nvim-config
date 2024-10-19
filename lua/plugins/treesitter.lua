@@ -1,7 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	opts = {
-		ensure_installed = { 'c', "lua", "vim", "vimdoc", "cpp", "python" },
+		ensure_installed = { "c", "lua", "vim", "vimdoc", "cpp", "python" },
 		sync_install = false,
 		auto_install = false,
 		ignore_install = { "markdown", "latex" },
@@ -13,7 +13,7 @@ return {
 				if ok and stats and stats.size > max_filesize then
 					return true
 				end
-			end
+			end,
 		},
 	},
 	config = function()
