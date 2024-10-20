@@ -30,5 +30,6 @@ return {
 				},
 			},
 		})
+		cfg.clangd.setup({})
 	end,
 }
