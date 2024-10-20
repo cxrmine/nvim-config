@@ -8,6 +8,7 @@ return {
 		lint.linters_by_ft = {
 			lua = { "luacheck" },
 			c = { "cpplint" },
+			python = { "mypy" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()

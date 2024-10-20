@@ -31,5 +31,6 @@ return {
 			},
 		})
 		cfg.clangd.setup({})
+		cfg.pyright.setup({})
 	end,
 }
