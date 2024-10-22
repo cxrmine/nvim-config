@@ -2,6 +2,7 @@ return {
 	"mfussenegger/nvim-lint",
 	config = function()
 		local ok, lint = pcall(require, "lint")
+		local util = require("config.util")
 		if not ok then
 			return 0
 		end
@@ -12,7 +13,14 @@ return {
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
-				lint.try_lint()
+				local ignored_dirs = {
+					"~/code/c-piscine/"
+				}
+				if util.ignore_paths(ignored_dirs) then
+					return false
+				else
+					lint.try_lint()
+				end
 			end,
 		})
 	end,
