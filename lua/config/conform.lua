@@ -9,9 +9,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		local util = require("config.util")
 		local ignored_dirs = { "~/code/c-piscine/" }
 		if util.ignore_dirs(ignored_dirs) then
-			conform.format({ bufnr = args.buf })
-		else
 			return false
+		else
+			conform.format({ bufnr = args.buf })
 		end
 	end,
 })
