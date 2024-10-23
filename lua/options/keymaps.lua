@@ -14,3 +14,10 @@ set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- source: https://github.com/nvim-telescope/telescope.nvim
+
+local conform = require("conform")
+set("n", "<C-f>", function ()
+	conform.format({
+		bufnr = vim.api.nvim_get_current_buf()
+	})
+end, opts)
