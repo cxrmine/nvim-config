@@ -1,16 +1,24 @@
 local lib = {}
 
-lib.ignore_paths = function(paths)
-	local i = 0
+lib.ignore_dirs = function(paths)
+	if not type(paths) == "table" then
+		return false
+	end
 
-	while (i <= #paths)
-		do
-			if not vim.fs.dirname(paths[i]) then
-				return 0;
-			end
-			i = i + 1
+	if #paths == 1 then
+		return true
+	end
+
+	local i = 1
+
+	while i <= #paths do
+		if next(vim.fs.dir(paths[i])) == nil then
+			return false
 		end
-	return 1
+		i = i + 1
+	end
+
+	return true
 end
 
 return lib

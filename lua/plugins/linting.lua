@@ -14,9 +14,9 @@ return {
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 			callback = function()
 				local ignored_dirs = {
-					"~/code/c-piscine/"
+					"~/code/c-piscine/",
 				}
-				if util.ignore_paths(ignored_dirs) then
+				if util.ignore_dirs(ignored_dirs) then
 					return false
 				else
 					lint.try_lint()

@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 	config = function()
 		local cfg = require("lspconfig")
 		cfg.lua_ls.setup({

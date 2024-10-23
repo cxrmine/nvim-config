@@ -9,6 +9,7 @@ return {
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
 	},
+	event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 	config = function()
 		local cmp = require("cmp")
 		cmp.setup({
