@@ -9,6 +9,6 @@ return {
 		default_map = false,
     	auto_update = true,
     	user = "amaryllis",
-    	mail = "",
+    	mail = "amaryllismain09@gmail.com",
 	}
 }
