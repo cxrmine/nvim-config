@@ -16,8 +16,12 @@ set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- source: https://github.com/nvim-telescope/telescope.nvim
 
 local conform = require("conform")
-set("n", "<C-f>", function ()
+set("n", "<C-f>", function()
 	conform.format({
-		bufnr = vim.api.nvim_get_current_buf()
+		bufnr = vim.api.nvim_get_current_buf(),
 	})
-end, opts)
+end, vim.tbl_extend("force", opts, { desc = "Format files depending on their LSPs" }))
+
+set("n", "<leader>ft", function()
+	vim.cmd("Stdheader")
+end, { desc = "[f]orty-[t]wo | adds 42 header on C files" })

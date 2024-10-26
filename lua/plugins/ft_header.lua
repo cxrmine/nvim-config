@@ -1,5 +1,6 @@
 return {
 	"Diogo-ss/42-header.nvim",
+	cmd = "Stdheader",
 	keys = {
 		"<leader>ft",
 		"<cmd>Stdheader<CR>",
