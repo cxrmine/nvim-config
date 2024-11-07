@@ -9,7 +9,7 @@ return {
 	opts = {
 		default_map = false,
     	auto_update = true,
-    	user = "amaryllis",
-    	mail = "amaryllismain09@gmail.com",
+    	user = "tmalkawi",
+    	mail = "marvin@42.fr",
 	}
 }
