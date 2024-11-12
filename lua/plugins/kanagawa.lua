@@ -4,10 +4,19 @@ return {
 	priority = 4000,
 	config = function()
 		local kanagawa = require("kanagawa")
-		kanagawa.setup({
-			commentStyle = { italic = false },
-			keywordStyle = { italic = false },
-			statementStyle = { bold = false },
-		})
+		kanagawa.setup {
+			commentStyle = {
+				bold = true,
+				italic = true,
+			},
+			functionStyle = {
+				bold = true,
+				italic = false,
+			},
+			typeStyle = {
+				bold = true,
+				italic = true,
+			},
+		}
 	end,
 }
