@@ -38,6 +38,16 @@ return {
 			})
 			cfg.clangd.setup({})
 			cfg.pyright.setup({})
+			--[[
+			cfg.harper_ls.setup({
+				settings = {
+					["harper-ls"] = {
+						userDictPath = "~/dict.txt",
+					},
+				},
+			})
+			--]]
+			cfg.ast_grep.setup{}
 		end,
 	},
 }
