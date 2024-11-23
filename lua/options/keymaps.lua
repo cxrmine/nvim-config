@@ -5,7 +5,7 @@ local set = vim.keymap.set
 set("n", "<leader>pv", "<CMD>Ex<CR>", opts)
 
 -- opens the colorscheme switcher window
-set("n", "<leader>cs", "<CMD>Themery<CR>", opts)
+set("n", "<leader>ct", "<CMD>Themery<CR>", opts)
 
 -- source: https://github.com/nvim-telescope/telescope.nvim
 local builtin = require("telescope.builtin")
@@ -25,3 +25,11 @@ end, vim.tbl_extend("force", opts, { desc = "Format files depending on their LSP
 set("n", "<leader>ft", function()
 	vim.cmd("Stdheader")
 end, { desc = "[f]orty-[t]wo | adds 42 header on C files" })
+
+
+-- File tree keybindings
+set("n", "<leader>to", function ()
+	vim.cmd("NvimTreeOpen")	
+end, {
+	desc = "[t]ree-[o]pen | open the file tree view"
+})
