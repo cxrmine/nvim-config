@@ -45,8 +45,21 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			styles = {
-				keywords = { "bold", "italic" },
+			integrations = {
+				noice = false,
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				notify = false,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
+				styles = {
+					keywords = { "bold", "italic" },
+					comment = { "bold" },
+				},
 			},
 		},
 	},
