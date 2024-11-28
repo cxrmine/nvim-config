@@ -3,7 +3,26 @@ return {
 		"nvim-tree/nvim-tree.lua",
 		config = function()
 			local tree = require("nvim-tree")
-			tree.setup()
+			tree.setup({
+				renderer = {
+					icons = {
+						web_devicons = {
+							folder = {
+								enable = true,
+								color = true,
+							},
+						},
+						glyphs = {
+							folder = {
+								default = "󰉋",
+								open = "",
+								arrow_closed = "󰁕",
+								arrow_open = "󰁆",
+							},
+						},
+					},
+				},
+			})
 			vim.g.loaded_netrw = 1
 			vim.g.loaded_netrwPlugin = 1
 			vim.opt.termguicolors = true
@@ -35,6 +54,38 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
+		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			theme = "catppuccin",
+		},
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {
+			strict = true,
+			override_by_extension = {
+				["c"] = {
+					icon = "",
+					color = "#5c6bc0",
+					name = "c",
+				},
+				["h"] = {
+					icon = "",
+					color = "#7E60BF",
+					name = "h",
+				}
+			},
+			override_by_filename = {
+				["Makefile"] = {
+					icon = "",
+					color = "#A8CD89",
+					name = "Makefile",
+				},
+			},
 		},
 	},
 }
