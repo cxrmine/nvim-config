@@ -2,6 +2,15 @@ return {
 	{
 		"zaldih/themery.nvim",
 		lazy = false,
+		keys = {
+			{
+				"<leader>ct",
+				function ()
+					vim.cmd("Themery")
+				end,
+				desc = "[c]hange-[t]heme",
+			}
+		},
 		opts = {
 			livePreview = true,
 			themes = {

@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-tree/nvim-tree.lua",
+		event = "BufEnter",
 		config = function()
 			local tree = require("nvim-tree")
 			tree.setup({
@@ -20,11 +21,11 @@ return {
 								arrow_open = "󰁆",
 							},
 							git = {
-								unstaged = "";
-								staged = "";
-								deleted = "󰆴";
-								ignored = "";
-							}
+								unstaged = "",
+								staged = "",
+								deleted = "󰆴",
+								ignored = "",
+							},
 						},
 					},
 				},
@@ -83,7 +84,7 @@ return {
 					icon = "",
 					color = "#7E60BF",
 					name = "h",
-				}
+				},
 			},
 			override_by_filename = {
 				["Makefile"] = {

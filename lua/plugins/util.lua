@@ -14,7 +14,15 @@ return {
 	},
 	{
 		"Diogo-ss/42-header.nvim",
-		cmd = "Stdheader",
+		keys = {
+			{
+				"<leader>ft",
+				function()
+					vim.cmd("Stdheader")
+				end,
+				desc = "[f]orty-[t]wo | adds 42 header on C files",
+			},
+		},
 		opts = {
 			default_map = false,
 			auto_update = true,
@@ -23,9 +31,9 @@ return {
 		},
 	},
 	{
-    	"andweeb/presence.nvim",
+		"andweeb/presence.nvim",
 		opts = {
 			neovim_image_text = "nvim for the boys",
 		},
-	}
+	},
 }
