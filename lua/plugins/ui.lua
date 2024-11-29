@@ -22,7 +22,7 @@ return {
 							git = {
 								unstaged = "";
 								staged = "";
-								deleted = "";
+								deleted = "󰆴";
 								ignored = "";
 							}
 						},
