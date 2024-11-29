@@ -19,6 +19,12 @@ return {
 								arrow_closed = "󰁕",
 								arrow_open = "󰁆",
 							},
+							git = {
+								unstaged = "";
+								staged = "";
+								deleted = "";
+								ignored = "";
+							}
 						},
 					},
 				},
