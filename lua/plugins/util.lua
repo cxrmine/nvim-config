@@ -14,6 +14,7 @@ return {
 	},
 	{
 		"Diogo-ss/42-header.nvim",
+		event = "BufEnter",
 		keys = {
 			{
 				"<leader>ft",

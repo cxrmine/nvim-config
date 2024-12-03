@@ -5,11 +5,11 @@ return {
 		keys = {
 			{
 				"<leader>ct",
-				function ()
+				function()
 					vim.cmd("Themery")
 				end,
 				desc = "[c]hange-[t]heme",
-			}
+			},
 		},
 		opts = {
 			livePreview = true,
@@ -30,8 +30,16 @@ return {
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
-		priority = 1000,
-		opts = {},
+		priority = 4000,
+		opts = {
+			style = "moon",
+			light_style = "day",
+			transparent = false,
+			styles = {
+				keywords = { italic = true },
+				functions = { bold = true },
+			},
+		},
 	},
 	{
 		"rebelot/kanagawa.nvim",
