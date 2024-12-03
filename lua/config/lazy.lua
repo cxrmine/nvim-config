@@ -22,7 +22,7 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "habamax" } },
-  checker = { enabled = true },
+  install = { colorscheme = { "kanagawa-dragon" } },
+  checker = { enabled = true, notify = false },
 })
 -- source: https://lazy.folke.io/installation
