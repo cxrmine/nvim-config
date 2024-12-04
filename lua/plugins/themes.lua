@@ -62,6 +62,10 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
+			styles = {
+				keywords = { "italic" },
+				comments = { "bold", "italic" },
+			},
 			integrations = {
 				noice = false,
 				cmp = true,
@@ -72,10 +76,6 @@ return {
 				mini = {
 					enabled = true,
 					indentscope_color = "",
-				},
-				styles = {
-					keywords = { "bold", "italic" },
-					comment = { "bold" },
 				},
 			},
 		},
