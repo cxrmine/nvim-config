@@ -28,6 +28,35 @@ return {
 		},
 	},
 	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		opts = {
+			styles = {
+				comments = { "italic" },
+				loops = { "italic" },
+				conditionals = { "italic" },
+				keywords = { "italic" },
+				types = {
+					"italic",
+					"bold",
+				}
+			},
+			integrations = {
+				noice = false,
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				notify = false,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
+			},
+		},
+	},
+	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 4000,
@@ -56,28 +85,5 @@ return {
 				},
 			})
 		end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			styles = {
-				keywords = { "italic" },
-				comments = { "bold", "italic" },
-			},
-			integrations = {
-				noice = false,
-				cmp = true,
-				gitsigns = true,
-				nvimtree = true,
-				treesitter = true,
-				notify = false,
-				mini = {
-					enabled = true,
-					indentscope_color = "",
-				},
-			},
-		},
 	},
 }
