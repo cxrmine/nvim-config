@@ -127,6 +127,15 @@ return {
 	},
 	{
 		"hardyrafael17/norminette42.nvim",
+		enabled = function ()
+			local current_buffer = vim.api.nvim_buf_get_name(0)
+			local ft_prefix = "ft_"
+			local i, j = string.find(current_buffer, ft_prefix)
+			if i == nil or j == nil then
+				return false
+			end
+			return true
+		end,
 		config = function()
 			local norminette = require("norminette")
 			norminette.setup({
@@ -149,18 +158,6 @@ return {
 				c = { "cpplint" },
 				python = { "mypy" },
 			}
-			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-				callback = function()
-					local ignored_dirs = {
-						"~/code/c-piscine/",
-					}
-					if util.ignore_dirs(ignored_dirs) then
-						return false
-					else
-						lint.try_lint()
-					end
-				end,
-			})
 		end,
 	},
 }
