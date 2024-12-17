@@ -127,7 +127,7 @@ return {
 	},
 	{
 		"hardyrafael17/norminette42.nvim",
-		enabled = function ()
+		enabled = function()
 			local current_buffer = vim.api.nvim_buf_get_name(0)
 			local ft_prefix = "ft_"
 			local i, j = string.find(current_buffer, ft_prefix)
@@ -149,7 +149,6 @@ return {
 		"mfussenegger/nvim-lint",
 		config = function()
 			local ok, lint = pcall(require, "lint")
-			local util = require("config.util")
 			if not ok then
 				return 0
 			end
