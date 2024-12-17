@@ -49,9 +49,13 @@ return {
 			kanagawa.setup({
 				commentStyle = {
 					italic = true,
-					bold = true,
 				},
-				typeStyle = {
+				statementStyle = {
+					bold = false,
+					italic = true,
+				},
+				keywordStyle = {
+					bold = false,
 					italic = true,
 				},
 			})
@@ -63,8 +67,11 @@ return {
 		priority = 1000,
 		opts = {
 			styles = {
+				conditionals = { "italic" },
+				loops = { "italic" },
 				keywords = { "italic" },
-				comments = { "bold", "italic" },
+				comments = { "italic" },
+				types = { "bold" }
 			},
 			integrations = {
 				noice = false,
