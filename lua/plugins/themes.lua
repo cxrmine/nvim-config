@@ -90,8 +90,6 @@ return {
 			})
 		end,
 	},
-<<<<<<< HEAD
-=======
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -118,5 +116,4 @@ return {
 			},
 		},
 	},
->>>>>>> aa23f6fa52cdf5b902ed8fc40514f40e3c19e79f
 }
