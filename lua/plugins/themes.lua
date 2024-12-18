@@ -78,12 +78,45 @@ return {
 			kanagawa.setup({
 				commentStyle = {
 					italic = true,
-					bold = true,
 				},
-				typeStyle = {
+				statementStyle = {
+					bold = false,
+					italic = true,
+				},
+				keywordStyle = {
+					bold = false,
 					italic = true,
 				},
 			})
 		end,
 	},
+<<<<<<< HEAD
+=======
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		opts = {
+			styles = {
+				conditionals = { "italic" },
+				loops = { "italic" },
+				keywords = { "italic" },
+				comments = { "italic" },
+				types = { "bold" }
+			},
+			integrations = {
+				noice = false,
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				notify = false,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
+			},
+		},
+	},
+>>>>>>> aa23f6fa52cdf5b902ed8fc40514f40e3c19e79f
 }
