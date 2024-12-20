@@ -28,26 +28,6 @@ return {
 		},
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			styles = {},
-			integrations = {
-				noice = false,
-				cmp = true,
-				gitsigns = true,
-				nvimtree = true,
-				treesitter = true,
-				notify = true,
-				mini = {
-					enabled = true,
-					indentscope_color = "",
-				},
-			},
-		},
-	},
-	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 4000,
@@ -91,7 +71,7 @@ return {
 				loops = { "italic" },
 				keywords = { "italic" },
 				comments = { "italic" },
-				types = { "bold" }
+				types = { "bold" },
 			},
 			integrations = {
 				noice = false,
