@@ -7,9 +7,16 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
+			local status, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+			if not status then
+				return
+			end
+			local capabilities = cmp_lsp.default_capabilities()
+
 			-- source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 			local cfg = require("lspconfig")
 			cfg.lua_ls.setup({
+				capabilities = capabilities,
 				on_init = function(client)
 					local path = client.workspace_folders[1].name
 					if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
@@ -33,12 +40,6 @@ return {
 				},
 			})
 			-- source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
-
-			local status, cmp_lsp = pcall(require, "cmp_nvim_lsp")
-			if not status then
-				return
-			end
-			local capabilities = cmp_lsp.default_capabilities()
 
 			cfg.clangd.setup({ capabilities = capabilities })
 			cfg.pyright.setup({ capabilities = capabilities })

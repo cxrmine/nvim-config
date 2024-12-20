@@ -36,7 +36,6 @@ return {
 				comments = { "italic" },
 				loops = { "italic" },
 				conditionals = { "italic" },
-				keywords = { "italic" },
 				types = {
 					"italic",
 					"bold",
