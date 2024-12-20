@@ -32,15 +32,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			styles = {
-				comments = { "italic" },
-				loops = { "italic" },
-				conditionals = { "italic" },
-				types = {
-					"italic",
-					"bold",
-				}
-			},
+			styles = {},
 			integrations = {
 				noice = false,
 				cmp = true,
