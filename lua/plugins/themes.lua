@@ -32,7 +32,6 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			transparent_background = true,
 			styles = {
 				comments = { "italic" },
 				loops = { "italic" },
@@ -49,7 +48,7 @@ return {
 				gitsigns = true,
 				nvimtree = true,
 				treesitter = true,
-				notify = false,
+				notify = true,
 				mini = {
 					enabled = true,
 					indentscope_color = "",

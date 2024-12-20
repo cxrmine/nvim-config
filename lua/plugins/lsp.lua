@@ -7,6 +7,7 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
+			-- source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 			local cfg = require("lspconfig")
 			cfg.lua_ls.setup({
 				on_init = function(client)
@@ -31,10 +32,18 @@ return {
 					Lua = {},
 				},
 			})
-			cfg.clangd.setup({})
-			cfg.pyright.setup({})
-			cfg.ast_grep.setup({})
-			cfg.cmake.setup({})
+			-- source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
+
+			local status, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+			if not status then
+				return
+			end
+			local capabilities = cmp_lsp.default_capabilities()
+
+			cfg.clangd.setup({ capabilities = capabilities })
+			cfg.pyright.setup({ capabilities = capabilities })
+			cfg.ast_grep.setup({ capabilities = capabilities })
+			cfg.cmake.setup({ capabilities = capabilities })
 		end,
 	},
 	{
@@ -90,18 +99,6 @@ return {
 				}),
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lsp = require("lspconfig")
-
-			lsp["lua_ls"].setup({
-				capabilities = capabilities,
-			})
-			lsp["pyright"].setup({
-				capabilities = capabilities,
-			})
-			lsp["clangd"].setup({
-				capabilities = capabilities,
-			})
 		end,
 	},
 	{
@@ -127,15 +124,6 @@ return {
 	},
 	{
 		"hardyrafael17/norminette42.nvim",
-		enabled = function()
-			local current_buffer = vim.api.nvim_buf_get_name(0)
-			local ft_prefix = "ft_"
-			local i, j = string.find(current_buffer, ft_prefix)
-			if i == nil or j == nil then
-				return false
-			end
-			return true
-		end,
 		config = function()
 			local norminette = require("norminette")
 			norminette.setup({
