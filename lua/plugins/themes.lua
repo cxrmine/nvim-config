@@ -66,6 +66,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
+			transparent_background = true,
 			styles = {
 				conditionals = { "italic" },
 				loops = { "italic" },
@@ -74,16 +75,12 @@ return {
 				types = { "bold" },
 			},
 			integrations = {
-				noice = false,
+				noice = true,
 				cmp = true,
 				gitsigns = true,
 				nvimtree = true,
 				treesitter = true,
-				notify = false,
-				mini = {
-					enabled = true,
-					indentscope_color = "",
-				},
+				notify = true,
 			},
 		},
 	},
