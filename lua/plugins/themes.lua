@@ -72,6 +72,7 @@ return {
 				keywords = { "italic" },
 				comments = { "italic" },
 				types = { "bold" },
+				functions = { "bold", "italic" }
 			},
 			integrations = {
 				noice = true,
