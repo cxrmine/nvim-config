@@ -44,7 +44,6 @@ return {
 			cfg.clangd.setup({ capabilities = capabilities })
 			cfg.pyright.setup({ capabilities = capabilities })
 			cfg.ast_grep.setup({ capabilities = capabilities })
-			cfg.cmake.setup({ capabilities = capabilities })
 		end,
 	},
 	{
