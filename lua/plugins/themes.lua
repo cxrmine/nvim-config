@@ -68,11 +68,7 @@ return {
 		opts = {
 			styles = {
 				conditionals = { "italic" },
-				loops = { "italic" },
-				keywords = { "italic" },
 				comments = { "italic" },
-				types = { "bold" },
-				functions = { "bold", "italic" }
 			},
 			integrations = {
 				noice = true,
