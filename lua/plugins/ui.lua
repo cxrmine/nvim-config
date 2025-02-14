@@ -21,10 +21,11 @@ return {
 								arrow_open = "󰁆",
 							},
 							git = {
-								unstaged = "",
-								staged = "",
-								deleted = "󰆴",
-								ignored = "",
+								unstaged = "󱪡",
+								staged = "󰈖",
+								deleted = "󰮘",
+								ignored = "󰘓",
+								untracked = "󰻭",
 							},
 						},
 					},
@@ -76,19 +77,19 @@ return {
 			strict = true,
 			override_by_extension = {
 				["c"] = {
-					icon = "",
+					icon = "󰙱",
 					color = "#5c6bc0",
 					name = "c",
 				},
 				["h"] = {
-					icon = "",
+					icon = "󰰀",
 					color = "#7E60BF",
 					name = "h",
 				},
 			},
 			override_by_filename = {
 				["Makefile"] = {
-					icon = "",
+					icon = "",
 					color = "#A8CD89",
 					name = "Makefile",
 				},
