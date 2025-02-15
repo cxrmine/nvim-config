@@ -60,18 +60,19 @@ return {
 		},
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
+			local lspkind = require("lspkind")
 			local cmp = require("cmp")
 			local lspkind = require('lspkind')
 			cmp.setup({
 				formatting = {
 					format = lspkind.cmp_format({
-						mode = "symbol", -- show only symbol annotations
+						mode = "symbol",
 						maxwidth = {
-							menu = 50, -- leading text (labelDetails)
-							abbr = 50, -- actual suggestion item
+							menu = 50,
+							abbr = 50,
 						},
-						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-						show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+						ellipsis_char = "...",
+						show_labelDetails = true,
 						before = function(entry, vim_item)
 							return vim_item
 						end,
@@ -162,5 +163,39 @@ return {
 				python = { "mypy" },
 			}
 		end,
+	},
+	{
+		"onsails/lspkind.nvim",
+		opts = {
+			mode = "symbol_text",
+			preset = "default",
+			symbol_map = {
+				Text = "󰉿",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "",
+			},
+		},
 	},
 }

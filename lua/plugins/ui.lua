@@ -48,7 +48,7 @@ return {
 			strict = true,
 			override_by_extension = {
 				["c"] = {
-					icon = "󰙱",
+					icon = "",
 					color = "#5c6bc0",
 					name = "c",
 				},
@@ -66,5 +66,18 @@ return {
 				},
 			},
 		},
+	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		keys = {
+			{
+				"-",
+				"<CMD>Oil<CR>",
+				desc = "Open parent directory",
+			},
+		},
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		lazy = false,
 	},
 }

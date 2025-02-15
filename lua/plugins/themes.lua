@@ -35,7 +35,7 @@ return {
 		opts = {
 			style = "moon",
 			light_style = "day",
-			transparent = false,
+			transparent = true,
 			styles = {
 				keywords = { italic = true },
 				functions = { bold = true },
@@ -67,6 +67,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
+			transparent_background = true,
 			styles = {
 				conditionals = {},
 				comments = {},
