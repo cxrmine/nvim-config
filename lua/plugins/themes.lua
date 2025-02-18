@@ -2,6 +2,7 @@ return {
 	{
 		"zaldih/themery.nvim",
 		lazy = false,
+		priority = 1000,
 		keys = {
 			{
 				"<leader>ct",
@@ -67,8 +68,9 @@ return {
 		priority = 1000,
 		opts = {
 			styles = {
-				conditionals = { "italic" },
-				comments = { "italic" },
+				conditionals = {},
+				comments = {},
+				functions = { "bold" },
 			},
 			integrations = {
 				noice = true,

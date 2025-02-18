@@ -20,7 +20,7 @@ return {
 		{
 			"<leader>fb",
 			function ()
-				require("telescope.builtin").buffers()	
+				require("telescope.builtin").buffers()
 			end,
 			desc = "Telescope buffers",
 		},

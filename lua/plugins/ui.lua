@@ -1,40 +1,11 @@
 return {
 	{
-		"nvim-tree/nvim-tree.lua",
-		event = "BufEnter",
-		config = function()
-			local tree = require("nvim-tree")
-			tree.setup({
-				renderer = {
-					icons = {
-						web_devicons = {
-							folder = {
-								enable = true,
-								color = true,
-							},
-						},
-						glyphs = {
-							folder = {
-								default = "󰉋",
-								open = "",
-								arrow_closed = "󰁕",
-								arrow_open = "󰁆",
-							},
-							git = {
-								unstaged = "󱪡",
-								staged = "󰈖",
-								deleted = "󰮘",
-								ignored = "󰘓",
-								untracked = "󰻭",
-							},
-						},
-					},
-				},
-			})
-			vim.g.loaded_netrw = 1
-			vim.g.loaded_netrwPlugin = 1
-			vim.opt.termguicolors = true
-		end,
+		"stevearc/oil.nvim",
+		dependencies = {
+			{ "echasnovski/mini.icons", opts = {} },
+			{ "nvim-tree/nvim-web-devicons", opts = {} },
+		},
+		opts = {},
 	},
 	{
 		"stevearc/dressing.nvim",
