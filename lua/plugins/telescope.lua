@@ -5,31 +5,31 @@ return {
 	keys = {
 		{
 			"<leader>ff",
-			function ()
+			function()
 				require("telescope.builtin").find_files()
 			end,
 			desc = "Telescope find files",
 		},
 		{
 			"<leader>fg",
-			function ()
+			function()
 				require("telescope.builtin").live_grep()
 			end,
-			desc = "Telescope live grep"
+			desc = "Telescope live grep",
 		},
 		{
 			"<leader>fb",
-			function ()
+			function()
 				require("telescope.builtin").buffers()
 			end,
 			desc = "Telescope buffers",
 		},
 		{
 			"<leader>fh",
-			function ()
+			function()
 				require("telescope.builtin").help_tags()
 			end,
-			desc = "Telescope help tags"
-		}
-	}
+			desc = "Telescope help tags",
+		},
+	},
 }
