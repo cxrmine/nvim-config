@@ -25,17 +25,45 @@ return {
 				"catppuccin-frappe",
 				"catppuccin-macchiato",
 				"catppuccin-mocha",
+				"monokai-pro",
+				"monokai-pro-default",
+				"monokai-pro-octagon",
+				"monokai-pro-machine",
+				"monokai-pro-ristretto",
+				"monokai-pro-spectrum",
+				"monokai-pro-classic",
 			},
+		},
+	},
+	{
+		"loctvl842/monokai-pro.nvim",
+		lazy = false,
+		priority = 4000,
+		opts = {
+			background_clear = {
+				"float_win",
+				"notify",
+				"telescope",
+				"lualine",
+			},
+			styles = {
+				keyword = { bold = true },
+				type = { italic = true },
+			},
+			override = function (c)
+				return {
+					["@lsp.type.parameter"] = { fg = c.base.blue },
+					Type = { fg = c.base.cyan }
+				}
+			end,
 		},
 	},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
-		priority = 4000,
 		opts = {
 			style = "moon",
 			light_style = "day",
-			transparent = true,
 			styles = {
 				keywords = { italic = true },
 				functions = { bold = true },

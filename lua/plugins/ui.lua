@@ -39,7 +39,26 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			theme = "catppuccin",
+			theme = "monokai-pro-ristretto",
+		},
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = {
+			renderer = {
+				icons = {
+					glyphs = {
+						git = {
+							unstaged = "󱪡",
+							staged = "󰝒",
+							renamed = "󰤘",
+							untracked = "󱀶",
+							deleted = "󰮘",
+							ignored = "󰘓",
+						},
+					},
+				},
+			},
 		},
 	},
 	{
