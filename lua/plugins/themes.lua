@@ -41,11 +41,11 @@ return {
 		lazy = false,
 		priority = 4000,
 		opts = {
-			transparent_background = true,
+			tranaprant_background = true,
 			styles = {
+				comments = { "italic" },
+				types = { "italic" },
 				conditionals = {},
-				comments = {},
-				functions = { "bold" },
 			},
 			integrations = {
 				noice = true,

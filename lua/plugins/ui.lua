@@ -1,5 +1,16 @@
 return {
 	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		opts = {
+			options = {
+				modified_icon = "󰄛";
+				separator_style = "slant",
+			}
+		},
+	},
+	{
 		"stevearc/oil.nvim",
 		dependencies = {
 			{ "echasnovski/mini.icons", opts = {} },
