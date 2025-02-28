@@ -41,7 +41,7 @@ return {
 		lazy = false,
 		priority = 4000,
 		opts = {
-			tranaprant_background = true,
+			transparent_background = true,
 			styles = {
 				comments = { "italic" },
 				types = { "italic" },
