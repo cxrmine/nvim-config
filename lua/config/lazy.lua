@@ -25,4 +25,3 @@ require("lazy").setup({
 	install = { colorscheme = { "kanagawa-dragon" } },
 	checker = { enabled = true, notify = false },
 })
--- source: https://lazy.folke.io/installation
