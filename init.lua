@@ -3,6 +3,5 @@ vim.g.loaded_netrwPlugin = 1
 
 require("config.lazy")
 
-require("options.keymaps")
 require("options.ui")
 

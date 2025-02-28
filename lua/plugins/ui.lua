@@ -5,9 +5,9 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = {
 			options = {
-				modified_icon = "󰄛";
+				modified_icon = "󰄛",
 				separator_style = "slant",
-			}
+			},
 		},
 	},
 	{
@@ -15,6 +15,10 @@ return {
 		dependencies = {
 			{ "echasnovski/mini.icons", opts = {} },
 			{ "nvim-tree/nvim-web-devicons", opts = {} },
+		},
+		cmd = { "OIL" },
+		keys = {
+			{ "-", "<CMD>Oil<CR>", desc = "opens current file tree in a new vim buffer" },
 		},
 		opts = {},
 	},
