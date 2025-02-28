@@ -36,9 +36,29 @@ return {
 		},
 	},
 	{
-		"loctvl842/monokai-pro.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 4000,
+		opts = {
+			transparent_background = true,
+			styles = {
+				conditionals = {},
+				comments = {},
+				functions = { "bold" },
+			},
+			integrations = {
+				noice = true,
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				notify = true,
+			},
+		},
+	},
+	{
+		"loctvl842/monokai-pro.nvim",
 		opts = {
 			background_clear = {
 				"float_win",
@@ -89,26 +109,5 @@ return {
 				},
 			})
 		end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			transparent_background = true,
-			styles = {
-				conditionals = {},
-				comments = {},
-				functions = { "bold" },
-			},
-			integrations = {
-				noice = true,
-				cmp = true,
-				gitsigns = true,
-				nvimtree = true,
-				treesitter = true,
-				notify = true,
-			},
-		},
 	},
 }
