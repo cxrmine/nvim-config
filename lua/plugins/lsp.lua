@@ -19,7 +19,7 @@ return {
 				capabilities = capabilities,
 				on_init = function(client)
 					local path = client.workspace_folders[1].name
-					if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
+					if vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc") then
 						return
 					end
 
@@ -60,7 +60,6 @@ return {
 		},
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
-			local lspkind = require("lspkind")
 			local cmp = require("cmp")
 			local lspkind = require('lspkind')
 			cmp.setup({
@@ -115,7 +114,6 @@ return {
 				}, {
 					{ name = "cmdline" },
 				}),
-				matching = { disallow_symbol_nonprefix_matching = false },
 			})
 		end,
 	},
