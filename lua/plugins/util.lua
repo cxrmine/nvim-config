@@ -33,7 +33,6 @@ return {
 		},
 		opts = {
 			default_map = false,
-			auto_update = true,
 			user = "tmalkawi",
 			mail = "marvin@42.fr",
 		},
