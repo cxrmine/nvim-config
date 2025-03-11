@@ -43,9 +43,8 @@ return {
 		opts = {
 			transparent_background = true,
 			styles = {
-				comments = { "italic" },
-				types = { "italic" },
-				conditionals = {},
+				comments = {},
+				types = {},
 			},
 			integrations = {
 				noice = true,

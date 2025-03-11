@@ -54,11 +54,15 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			theme = "monokai-pro-ristretto",
+			theme = "",
 		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
+		cmd = { "NvimTreeOpen" },
+		keys = {
+			{ "<leader>to", "<CMD>NvimTreeOpen<CR>", desc = "opens tree file explorer"}
+		},
 		opts = {
 			renderer = {
 				icons = {
