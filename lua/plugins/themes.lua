@@ -43,8 +43,9 @@ return {
 		opts = {
 			transparent_background = true,
 			styles = {
-				comments = {},
-				types = {},
+				comments = { "italic" },
+				types = { "italic" },
+				functions = { "bold" },
 			},
 			integrations = {
 				noice = true,
