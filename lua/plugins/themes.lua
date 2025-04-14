@@ -45,7 +45,6 @@ return {
 			styles = {
 				comments = { "italic" },
 				types = { "italic" },
-				functions = { "bold" },
 			},
 			integrations = {
 				noice = true,
@@ -70,42 +69,62 @@ return {
 				keyword = { bold = true },
 				type = { italic = true },
 			},
-			override = function (c)
+			override = function(c)
 				return {
 					["@lsp.type.parameter"] = { fg = c.base.blue },
-					Type = { fg = c.base.cyan }
+					Type = { fg = c.base.cyan },
 				}
 			end,
 		},
 	},
 	{
 		"folke/tokyonight.nvim",
+		priority = 4000,
 		lazy = false,
 		opts = {
 			style = "moon",
 			light_style = "day",
 			styles = {
-				keywords = { italic = true },
-				functions = { bold = true },
+				comments = { italic = true },
+			},
+			plugins = {
+				bufferline = true,
+				telescope = true,
+				cmp = true,
+				lazy = true,
+				treesitter = true,
 			},
 		},
 	},
 	{
 		"rebelot/kanagawa.nvim",
 		name = "Katsushika Hokusai",
+		priority = 4000,
+		lazy = false,
 		config = function()
 			local kanagawa = require("kanagawa")
 			kanagawa.setup({
-				commentStyle = {
-					italic = true,
+				compile = false, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = false },
+				typeStyle = {},
+				transparent = true, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
 				},
-				statementStyle = {
-					bold = false,
-					italic = true,
-				},
-				keywordStyle = {
-					bold = false,
-					italic = true,
+				overrides = function(colors) -- add/modify highlights
+					return {}
+				end,
+				theme = "wave", -- Load "wave" theme
+				background = { -- map the value of 'background' option to a theme
+					dark = "wave", -- try "dragon" !
+					light = "lotus",
 				},
 			})
 		end,

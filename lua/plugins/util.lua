@@ -32,6 +32,7 @@ return {
 			}
 		},
 		opts = {
+			auto_update = false,
 			default_map = false,
 			auto_update = false,
 			user = "tmalkawi",
