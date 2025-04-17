@@ -24,7 +24,7 @@ return {
 		tag = "v0.13.1",
 		opts = {
 			fuzzy = {
-				implementation = 'lua',
+				implementation = "lua",
 			},
 			sources = {
 				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
