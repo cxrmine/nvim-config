@@ -39,9 +39,9 @@ return {
 					auto_show = true,
 					auto_show_delay_ms = 400,
 					window = {
-						border = 'rounded',
+						border = "rounded",
 						scrollbar = false,
-					}
+					},
 				},
 				ghost_text = { enabled = true },
 			},
