@@ -102,31 +102,28 @@ return {
 		priority = 4000,
 		lazy = false,
 		config = function()
-			local kanagawa = require("kanagawa")
+			local s, kanagawa = pcall(require, "kanagawa")
+			if s == 0 then
+				print("Failed to load kanagawa.nvim")
+				return
+			end
 			kanagawa.setup({
-				compile = false, -- enable compiling the colorscheme
-				undercurl = true, -- enable undercurls
-				commentStyle = { italic = true },
+				compile = false,
+				undercurl = false,
+				commenStyle = { italic = true },
 				functionStyle = {},
-				keywordStyle = { italic = true },
-				statementStyle = { bold = false },
+				statementStyle = { bold = false},
 				typeStyle = {},
-				transparent = true, -- do not set background color
-				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-				terminalColors = true, -- define vim.g.terminal_color_{0,17}
-				colors = { -- add/modify theme and palette colors
-					palette = {},
-					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-				},
-				overrides = function(colors) -- add/modify highlights
-					return {}
-				end,
-				theme = "wave", -- Load "wave" theme
-				background = { -- map the value of 'background' option to a theme
-					dark = "wave", -- try "dragon" !
+				keywordStyle = {},
+				transparent = true,
+				dimInactive = false,
+				terminalColors = true,
+				theme = "wave",
+				background = {
+					dark = "wave",
 					light = "lotus",
-				},
+				}
 			})
-		end,
+		end
 	},
 }
