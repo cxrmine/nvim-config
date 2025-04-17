@@ -7,10 +7,9 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
-			local cfg = require("lspconfig")
-			cfg.lua_ls.setup({
-
-				-- sets up lua_ls conf depending if conf files have been written
+			local capabilities = require("blink-cmp").get_lsp_capabilities()
+			vim.lsp.config({
+				capabilities = capabilities,
 				on_init = function(client)
 					local path = client.workspace_folders[1].name
 					if vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc") then
@@ -28,10 +27,9 @@ return {
 						},
 					})
 				end,
-				settings = {
-					Lua = {},
-				},
 			})
+			vim.lsp.config('clangd', { capabilities = capabilities })
+			vim.lsp.config('pyright', { capabilities = capabilities })
 		end,
 	},
 	{
