@@ -112,18 +112,18 @@ return {
 				undercurl = false,
 				commenStyle = { italic = true },
 				functionStyle = {},
-				statementStyle = { bold = false},
+				statementStyle = { bold = false },
 				typeStyle = {},
 				keywordStyle = {},
-				transparent = true,
+				transparent = false,
 				dimInactive = false,
 				terminalColors = true,
 				theme = "wave",
 				background = {
 					dark = "wave",
 					light = "lotus",
-				}
+				},
 			})
-		end
+		end,
 	},
 }

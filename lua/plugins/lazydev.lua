@@ -21,7 +21,7 @@ return {
 	},
 	{
 		"saghen/blink.cmp",
-		tag = "v0.13.1",
+		tag = "v1.*",
 		opts = {
 			fuzzy = {
 				implementation = "lua",

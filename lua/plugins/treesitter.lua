@@ -1,23 +1,45 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	event = { "BufNewFile", "BufReadPre", "BufReadPost" },
-	opts = {
-		ensure_installed = { "c", "lua", "vim", "vimdoc", "cpp", "python" },
-		sync_install = false,
-		auto_install = false,
-		ignore_install = { "markdown", "latex" },
-		highlight = {
-			enable = true,
-			disable = function(lang, buf)
-				local max_filesize = 100 * 1024 -- 100 kb
-				local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_get_buf_name(buf))
-				if ok and stats and stats.size > max_filesize then
-					return true
-				end
-			end,
+	{
+
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		priority = 3000,
+		opts = {
+			auto_install = true,
+			ensure_installed = {
+				"c",
+				"lua",
+				"cpp",
+				"make",
+				"comment",
+				"typescript",
+				"bash",
+				"vim",
+				"vimdoc",
+			},
+			sync_install = true,
+			ignore_install = { "javascript" },
+			highlight = {
+				enable = true,
+				disable = function(lang, buf)
+					local max_filesize = 100 * 1024
+					local s, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+					if s and stats and stats.size > max_filesize then
+						return true
+					end
+				end,
+			},
 		},
 	},
-	config = function()
-		vim.cmd("TSUpdate")
-	end,
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function (_, opts)
+			opts = opts or {}
+			local s, config = pcall(require, "nvim-treesitter.configs")
+			if s == 0 then
+				return print("Error: Unable to load treesitter configs")
+			end
+			config.setup(opts)
+		end
+	}
 }
