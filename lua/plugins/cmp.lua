@@ -48,6 +48,13 @@ return {
 			signature = { enabled = true },
 			sources = {
 				default = { "lsp", "buffer", "snippets", "path" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						score_offset = 100,
+					},
+				},
 			},
 		},
 	},
