@@ -12,28 +12,17 @@ return {
 				desc = "[c]hange-[t]heme",
 			},
 		},
-		opts = {
-			livePreview = true,
-			themes = {
-				"kanagawa-lotus",
-				"kanagawa-dragon",
-				"kanagawa-wave",
-				"tokyonight-day",
-				"tokyonight-moon",
-				"tokyonight-storm",
-				"catppuccin-latte",
-				"catppuccin-frappe",
-				"catppuccin-macchiato",
-				"catppuccin-mocha",
-				"monokai-pro",
-				"monokai-pro-default",
-				"monokai-pro-octagon",
-				"monokai-pro-machine",
-				"monokai-pro-ristretto",
-				"monokai-pro-spectrum",
-				"monokai-pro-classic",
-			},
-		},
+		opts = { livePreview = true },
+		config = function(_, opts)
+			local available_colorschemes = vim.fn.getcompletion("", "color")
+			local colorschemes = {}
+			for _, colorscheme in ipairs(available_colorschemes) do
+				table.insert(colorschemes, colorscheme)
+			end
+			require("themery").setup({
+				themes = colorschemes,
+			})
+		end,
 	},
 	{
 		"catppuccin/nvim",
