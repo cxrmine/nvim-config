@@ -8,6 +8,8 @@ return {
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		config = function()
 			local capabilities = require("blink-cmp").get_lsp_capabilities()
+			vim.lsp.enable("clangd")
+			vim.lsp.enable("pyright")
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				on_init = function(client)
@@ -28,9 +30,8 @@ return {
 					})
 				end,
 			})
-			vim.lsp.enable("clangd")
-			vim.lsp.config("clangd", { capabilities = capabilities })
-			vim.lsp.config("pyright", { capabilities = capabilities })
+			vim.lsp.config("*", { capabilities = capabilities })
+			vim.diagnostic.config({ virtual_text = true })
 		end,
 	},
 	{
