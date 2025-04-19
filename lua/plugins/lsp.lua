@@ -1,7 +1,16 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		opts = {},
+		opts = {
+			ui = {
+				border = "rounded",
+				icons = {
+					package_installed = "",
+					package_uninstalled = "",
+					package_pending = "",
+				}
+			}
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
