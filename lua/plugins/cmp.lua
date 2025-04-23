@@ -13,7 +13,7 @@ return {
 			fuzzy = { implementation = "lua" },
 			cmdline = {
 				keymap = {
-					preset = "inherit",
+					preset = "cmdline",
 				},
 				enabled = true,
 				completion = {

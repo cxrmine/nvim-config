@@ -12,7 +12,6 @@ return {
 				desc = "[c]hange-[t]heme",
 			},
 		},
-		opts = { livePreview = true },
 		config = function(_, opts)
 			local available_colorschemes = vim.fn.getcompletion("", "color")
 			local colorschemes = {}
@@ -20,6 +19,7 @@ return {
 				table.insert(colorschemes, colorscheme)
 			end
 			require("themery").setup({
+				livePreview = false,
 				themes = colorschemes,
 			})
 		end,
