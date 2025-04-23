@@ -13,7 +13,7 @@ return {
 			fuzzy = { implementation = "lua" },
 			cmdline = {
 				keymap = {
-					preset = "cmdline",
+					preset = "inherit",
 				},
 				enabled = true,
 				completion = {
@@ -47,7 +47,7 @@ return {
 			},
 			signature = { enabled = true },
 			sources = {
-				default = { "lsp", "buffer", "snippets", "path" },
+				default = { "lsp", "buffer", "snippets", "path", "omni", "cmdline", "lazydev" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",

@@ -16,6 +16,7 @@ return {
 				"bash",
 				"vim",
 				"vimdoc",
+				"regex",
 			},
 			sync_install = true,
 			ignore_install = { "javascript" },
@@ -29,6 +30,7 @@ return {
 					end
 				end,
 			},
+			additional_vim_regex_highlighting = true,
 		},
 	},
 	{
