@@ -91,13 +91,13 @@ return {
 			strict = true,
 			override_by_extension = {
 				["c"] = {
-					icon = "",
+					icon = "",
 					color = "#5c6bc0",
 					name = "c",
 				},
 				["h"] = {
-					icon = "",
-					color = "#702963",
+					icon = "",
+					color = "#A020F0",
 					name = "H",
 				},
 				["json"] = {
