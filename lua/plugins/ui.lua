@@ -12,15 +12,20 @@ return {
 	},
 	{
 		"stevearc/oil.nvim",
+		lazy = false,
 		dependencies = {
-			{ "echasnovski/mini.icons", opts = {} },
 			{ "nvim-tree/nvim-web-devicons", opts = {} },
 		},
 		cmd = { "OIL" },
 		keys = {
 			{ "-", "<CMD>Oil<CR>", desc = "opens current file tree in a new vim buffer" },
 		},
-		opts = {},
+		opts = {
+			columns = {
+				"size",
+				"icon",
+			},
+		},
 	},
 	{
 		"stevearc/dressing.nvim",
@@ -61,7 +66,7 @@ return {
 		"nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeOpen" },
 		keys = {
-			{ "<leader>to", "<CMD>NvimTreeOpen<CR>", desc = "opens tree file explorer"}
+			{ "<leader>to", "<CMD>NvimTreeOpen<CR>", desc = "opens tree file explorer" },
 		},
 		opts = {
 			renderer = {
@@ -91,9 +96,14 @@ return {
 					name = "c",
 				},
 				["h"] = {
-					icon = "󰰀",
-					color = "#7E60BF",
-					name = "h",
+					icon = "",
+					color = "#702963",
+					name = "H",
+				},
+				["json"] = {
+					icon = "",
+					color = "#e67f19",
+					name = "JSON",
 				},
 			},
 			override_by_filename = {
