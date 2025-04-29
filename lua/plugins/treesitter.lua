@@ -17,6 +17,8 @@ return {
 				"vim",
 				"vimdoc",
 				"regex",
+				"markdown",
+				"markdown_inline",
 			},
 			sync_install = true,
 			ignore_install = { "javascript" },
