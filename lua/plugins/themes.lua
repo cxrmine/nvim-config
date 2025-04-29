@@ -34,6 +34,7 @@ return {
 			styles = {
 				comments = { "italic" },
 				types = { "italic" },
+				functions = { "bold" },
 			},
 			integrations = {
 				noice = true,
