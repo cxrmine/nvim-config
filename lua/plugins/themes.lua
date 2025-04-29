@@ -19,7 +19,7 @@ return {
 				table.insert(colorschemes, colorscheme)
 			end
 			require("themery").setup({
-				livePreview = false,
+				livePreview = true,
 				themes = colorschemes,
 			})
 		end,
@@ -104,7 +104,7 @@ return {
 				statementStyle = { bold = false },
 				typeStyle = {},
 				keywordStyle = {},
-				transparent = false,
+				transparent = true,
 				dimInactive = false,
 				terminalColors = true,
 				theme = "wave",
