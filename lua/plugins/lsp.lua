@@ -8,8 +8,8 @@ return {
 					package_installed = "",
 					package_uninstalled = "",
 					package_pending = "",
-				}
-			}
+				},
+			},
 		},
 	},
 	{
@@ -19,6 +19,7 @@ return {
 			local capabilities = require("blink-cmp").get_lsp_capabilities()
 			vim.lsp.enable("clangd")
 			vim.lsp.enable("pyright")
+			vim.lsp.enable("lua_ls")
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				on_init = function(client)
@@ -38,6 +39,9 @@ return {
 						},
 					})
 				end,
+				settings = {
+					Lua = {},
+				},
 			})
 			vim.lsp.config("*", { capabilities = capabilities })
 			vim.diagnostic.config({ virtual_text = true })
@@ -70,7 +74,7 @@ return {
 			runOnSave = true,
 			maxErrorsToShow = 5,
 			active = true,
-		}
+		},
 	},
 	{
 		"mfussenegger/nvim-lint",
