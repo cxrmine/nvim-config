@@ -12,11 +12,16 @@ return {
 				desc = "[c]hange-[t]heme",
 			},
 		},
-		config = function(_, opts)
+		config = function()
 			local available_colorschemes = vim.fn.getcompletion("", "color")
 			local colorschemes = {}
+			local toTitleCase = require("options.utils").toTitleCase
 			for _, colorscheme in ipairs(available_colorschemes) do
-				table.insert(colorschemes, colorscheme)
+				local transformed = toTitleCase(colorscheme)
+				table.insert(colorschemes, {
+					colorscheme = colorscheme,
+					name = transformed
+				})
 			end
 			require("themery").setup({
 				livePreview = true,

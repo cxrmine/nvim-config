@@ -9,7 +9,7 @@ M.toTitleCase = function (s)
 	local i = 1
 
 	if type(s) ~= "string" then
-		return
+		return "Error: Invalid type"
 	end
 	transformed = string.lower(s)
 	for c in string.gmatch(transformed, ".") do
