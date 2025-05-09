@@ -6,7 +6,6 @@ M.toTitleCase = function (s)
 	local hasSeparator = false
 	local uppercased = false
 	local res = ""
-	local i = 1
 
 	if type(s) ~= "string" then
 		return "Error: Invalid type"
@@ -24,10 +23,8 @@ M.toTitleCase = function (s)
 				if M.isalpha(c) and not uppercased then
 					res = res .. string.upper(c)
 					uppercased = true
-					i = i + 1
 				else
 					res = res .. c
-					i = i + 1
 				end
 			end
 			res = res .. " "
@@ -35,15 +32,12 @@ M.toTitleCase = function (s)
 		return res
 	end
 
-	i = 1
 	for c in string.gmatch(s, ".") do
 		if M.isalpha(c) and not uppercased then
 			res = res .. string.upper(c)
 			uppercased = true
-			i = i + 1
 		else
 			res = res .. c
-			i = i + 1
 		end
 	end
 	return res
