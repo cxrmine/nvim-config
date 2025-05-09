@@ -3,6 +3,7 @@ return {
 		"zaldih/themery.nvim",
 		lazy = false,
 		priority = 1000,
+		tag = "v2.0.1",
 		keys = {
 			{
 				"<leader>ct",
