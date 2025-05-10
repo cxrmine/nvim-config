@@ -21,7 +21,7 @@ return {
 				local transformed = toTitleCase(colorscheme)
 				table.insert(colorschemes, {
 					colorscheme = colorscheme,
-					name = transformed
+					name = transformed,
 				})
 			end
 			require("themery").setup({
@@ -94,32 +94,25 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
-		name = "Katsushika Hokusai",
 		priority = 4000,
 		lazy = false,
-		config = function()
-			local s, kanagawa = pcall(require, "kanagawa")
-			if s == 0 then
-				print("Failed to load kanagawa.nvim")
-				return
-			end
-			kanagawa.setup({
-				compile = false,
-				undercurl = false,
-				commenStyle = { italic = true },
-				functionStyle = {},
-				statementStyle = { bold = false },
-				typeStyle = {},
-				keywordStyle = {},
-				transparent = true,
-				dimInactive = false,
-				terminalColors = true,
-				theme = "wave",
-				background = {
-					dark = "wave",
-					light = "lotus",
-				},
-			})
-		end,
+		opts = {
+			compile = false,
+			undercurl = false,
+			commenStyle = { italic = true },
+			functionStyle = {},
+			statementStyle = { bold = false },
+			typeStyle = {},
+			keywordStyle = {},
+			transparent = true,
+			dimInactive = false,
+			terminalColors = true,
+			theme = "wave",
+			background = {
+				dark = "wave",
+				light = "lotus",
+			},
+		},
+		config = true,
 	},
 }
