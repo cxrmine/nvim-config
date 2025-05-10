@@ -15,11 +15,23 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
-		config = function()
+		opts = {
+			servers = { "clangd", "pyright", "lua_ls" },
+		},
+		config = function(_, opts)
+			opts = opts or {}
 			local capabilities = require("blink-cmp").get_lsp_capabilities()
-			vim.lsp.enable("clangd")
-			vim.lsp.enable("pyright")
-			vim.lsp.enable("lua_ls")
+
+			if opts.servers == nil then
+				return print("Error: No configured LSP servers")
+			end
+
+			-- enable all cconfigured servers
+			-- TODO: add support for mason "ensure installed" servers
+			vim.lsp.enable(opts.servers)
+			vim.lsp.config("*", { capabilities = capabilities })
+			vim.diagnostic.config({ virtual_text = true })
+
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				on_init = function(client)
@@ -43,8 +55,6 @@ return {
 					Lua = {},
 				},
 			})
-			vim.lsp.config("*", { capabilities = capabilities })
-			vim.diagnostic.config({ virtual_text = true })
 		end,
 	},
 	{
