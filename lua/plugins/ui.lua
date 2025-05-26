@@ -67,6 +67,13 @@ return {
 		cmd = { "NvimTreeOpen" },
 		keys = {
 			{ "<leader>to", "<CMD>NvimTreeOpen<CR>", desc = "opens tree file explorer" },
+			{
+				"<leader>tc",
+				function()
+					return vim.cmd("NvimTreeClose")
+				end,
+				desc = "closes the tree file explorer",
+			},
 		},
 		opts = {
 			renderer = {
