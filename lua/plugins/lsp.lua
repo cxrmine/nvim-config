@@ -16,7 +16,7 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		opts = {
-			servers = { "clangd", "pyright", "lua_ls", "ts_ls" },
+			servers = { "clangd", "pyright", "lua_ls", "ts_ls", "jsonls" },
 		},
 		config = function(_, opts)
 			opts = opts or {}
