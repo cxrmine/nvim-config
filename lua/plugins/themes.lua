@@ -40,7 +40,7 @@ return {
 			styles = {
 				comments = { "italic" },
 				types = { "italic" },
-				functions = {},
+				conditionals = { "italic" },
 			},
 			integrations = {
 				noice = true,
