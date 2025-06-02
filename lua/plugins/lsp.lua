@@ -16,7 +16,7 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufNewFile", "BufReadPre", "BufReadPost" },
 		opts = {
-			servers = { "clangd", "pyright", "lua_ls" },
+			servers = { "clangd", "pyright", "lua_ls", "ts_ls", "jsonls" },
 		},
 		config = function(_, opts)
 			opts = opts or {}
@@ -26,7 +26,6 @@ return {
 				return print("Error: No configured LSP servers")
 			end
 
-			-- enable all cconfigured servers
 			-- TODO: add support for mason "ensure installed" servers
 			vim.lsp.enable(opts.servers)
 			vim.lsp.config("*", { capabilities = capabilities })
@@ -58,27 +57,6 @@ return {
 		end,
 	},
 	{
-		"stevearc/conform.nvim",
-		keys = {
-			{
-				"<C-f>",
-				function()
-					require("conform").format({
-						bufnr = vim.api.nvim_get_current_buf(),
-					})
-				end,
-				desc = "Prettify a file",
-			},
-		},
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				c = { "clang-format" },
-				python = { "autopep8" },
-			},
-		},
-	},
-	{
 		"hardyrafael17/norminette42.nvim",
 		opts = {
 			runOnSave = true,
@@ -97,6 +75,7 @@ return {
 				lua = { "luacheck" },
 				c = { "cpplint" },
 				python = { "mypy" },
+				typescript = { "eslint_d" },
 			}
 		end,
 	},
