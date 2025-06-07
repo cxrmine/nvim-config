@@ -25,14 +25,13 @@ return {
 			},
 			{
 				"<F2>",
-				function ()
+				function()
 					vim.cmd("Stdheader")
 				end,
-				desc = "Adds the 42 header"
-			}
+				desc = "Adds the 42 header",
+			},
 		},
 		opts = {
-			auto_update = false,
 			default_map = false,
 			auto_update = false,
 			user = "tmalkawi",
