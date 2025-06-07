@@ -35,13 +35,10 @@ return {
 		name = "catppuccin",
 		lazy = false,
 		priority = 4000,
+
+		---@type CatppuccinOptions
 		opts = {
 			transparent_background = true,
-			styles = {
-				comments = { "italic" },
-				types = { "italic" },
-				conditionals = { "italic" },
-			},
 			integrations = {
 				noice = true,
 				cmp = true,
@@ -49,6 +46,12 @@ return {
 				nvimtree = true,
 				treesitter = true,
 				notify = true,
+			},
+			term_colors = true,
+			styles  = {
+				comments = {},
+				booleans = { "bold" },
+				types = { "bold" },
 			},
 		},
 	},

@@ -13,12 +13,15 @@ return {
 			desc = "Prettify a file",
 		},
 	},
+	---@type conform.setupOpts
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			json = { "prettier", "prettierd", "fixjson" },
 			jsonc = { "fixjson" },
 			typescript = { "prettier", "prettierd" },
+			cpp = { "clang-format" },
 		},
+		notify_on_error = true,
 	},
 }
