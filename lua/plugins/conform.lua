@@ -19,6 +19,7 @@ return {
 			json = { "prettier", "prettierd", "fixjson" },
 			jsonc = { "fixjson" },
 			typescript = { "prettier", "prettierd" },
+			cpp = { "clang-format" },
 		},
 	},
 }
