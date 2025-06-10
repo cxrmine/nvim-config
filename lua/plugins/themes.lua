@@ -51,6 +51,7 @@ return {
 				},
 			},
 			term_colors = true,
+			transparent_background = true,
 
 			---@type CtpStyles
 			styles = {
