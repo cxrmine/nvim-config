@@ -4,12 +4,8 @@ if not status then
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.lua",
+	pattern = "*",
 	callback = function(args)
-		return conform.format({
-			bufnr = args.buf,
-		}, function()
-			return vim.notify(string.format("Formatted: %s", vim.api.nvim_buf_get_name(args.buf)))
-		end)
+		conform.format({ bufnr = args.buf })
 	end,
 })
