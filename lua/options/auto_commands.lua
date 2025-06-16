@@ -4,7 +4,7 @@ if not status then
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
+	pattern = { "*.lua", "*.cpp" },
 	callback = function(args)
 		conform.format({ bufnr = args.buf })
 	end,
