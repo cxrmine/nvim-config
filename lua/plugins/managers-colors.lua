@@ -5,7 +5,7 @@ return {
 		lazy = false,
 
 		---@info branch "master" is deprecated
-		branch = "master",
+		tag = "v0.10.0",
 		priority = 3000,
 		opts = {
 			auto_install = true,
