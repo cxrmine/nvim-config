@@ -89,6 +89,11 @@ return {
 				blink_cmp = {
 					style = "bordered",
 				},
+				treesitter_context = true,
+				telescope = {
+					enabled = true,
+				},
+				which_key = true,
 			},
 			term_colors = true,
 			transparent_background = true,
