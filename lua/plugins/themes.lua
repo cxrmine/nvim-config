@@ -36,20 +36,26 @@ return {
 		lazy = false,
 		priority = 4000,
 
+		---@module "catppuccin"
 		---@type CatppuccinOptions
 		opts = {
-			transparent_background = true,
+
+			---@type CtpIntegrations
 			integrations = {
 				noice = true,
-				cmp = true,
 				gitsigns = true,
-				nvimtree = true,
 				treesitter = true,
 				notify = true,
+				blink_cmp = {
+					style = "bordered",
+				},
 			},
 			term_colors = true,
-			styles  = {
-				comments = {},
+			transparent_background = true,
+
+			---@type CtpStyles
+			styles = {
+				comments = { "italic" },
 				booleans = { "bold" },
 				types = { "bold" },
 			},

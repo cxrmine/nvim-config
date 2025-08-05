@@ -26,7 +26,6 @@ return {
 				return print("Error: No configured LSP servers")
 			end
 
-			-- TODO: add support for mason "ensure installed" servers
 			vim.lsp.enable(opts.servers)
 			vim.lsp.config("*", { capabilities = capabilities })
 			vim.diagnostic.config({ virtual_text = true })

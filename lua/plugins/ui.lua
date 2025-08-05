@@ -67,6 +67,13 @@ return {
 		cmd = { "NvimTreeOpen" },
 		keys = {
 			{ "<leader>to", "<CMD>NvimTreeOpen<CR>", desc = "opens tree file explorer" },
+			{
+				"<leader>tc",
+				function()
+					return vim.cmd("NvimTreeClose")
+				end,
+				desc = "closes the tree file explorer",
+			},
 		},
 		opts = {
 			renderer = {
@@ -91,17 +98,32 @@ return {
 			strict = true,
 			override_by_extension = {
 				["c"] = {
-					icon = "",
+					icon = "",
 					color = "#5c6bc0",
-					name = "c",
+					name = "Clang",
 				},
 				["h"] = {
-					icon = "",
+					icon = "",
 					color = "#A020F0",
-					name = "H",
+					name = "CHeader",
+				},
+				["cpp"] = {
+					icon = "",
+					color = "#5c6bc0",
+					name = "Cpplang",
+				},
+				["hpp"] = {
+					icon = "",
+					color = "#A020F0",
+					name = "CppHeader",
+				},
+				["o"] = {
+					icon = "",
+					color = "#cfcfc4",
+					name = "Objectfiles",
 				},
 				["json"] = {
-					icon = "",
+					icon = "",
 					color = "#e67f19",
 					name = "JSON",
 				},
@@ -111,6 +133,11 @@ return {
 					icon = "",
 					color = "#A8CD89",
 					name = "Makefile",
+				},
+				["*"] = {
+					icon = "",
+					color = "#FFB26F",
+					name = "executables",
 				},
 			},
 		},

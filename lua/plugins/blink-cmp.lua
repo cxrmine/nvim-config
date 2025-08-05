@@ -14,6 +14,11 @@ return {
 			cmdline = {
 				keymap = {
 					preset = "cmdline",
+					["<C-space>"] = {
+						function(cmp)
+							cmp.show({ providers = { "property" } })
+						end,
+					},
 				},
 				enabled = true,
 				completion = {
