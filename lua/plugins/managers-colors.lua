@@ -1,5 +1,45 @@
 return {
 	{
+		"nvim-treesitter/nvim-treesitter",
+		name = "treesitter-stable",
+		lazy = false,
+
+		---@info branch "master" is deprecated
+		tag = "v0.10.0",
+		priority = 3000,
+		opts = {
+			auto_install = true,
+			ensure_installed = {
+				"c",
+				"lua",
+				"cpp",
+				"make",
+				"comment",
+				"typescript",
+				"bash",
+				"vim",
+				"vimdoc",
+				"regex",
+				"markdown",
+				"markdown_inline",
+			},
+			sync_install = true,
+			ignore_install = { "javascript" },
+			highlight = {
+				enable = true,
+				disable = function(lang, buf)
+					local max_filesize = 100 * 1024
+					local s, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+					if s and stats and stats.size > max_filesize then
+						return true
+					end
+				end,
+			},
+			install_dir = vim.fn.stdpath("data") .. "/site",
+			additional_vim_regex_highlighting = true,
+		},
+	},
+	{
 		"zaldih/themery.nvim",
 		lazy = false,
 		priority = 1000,
@@ -49,6 +89,11 @@ return {
 				blink_cmp = {
 					style = "bordered",
 				},
+				treesitter_context = true,
+				telescope = {
+					enabled = true,
+				},
+				which_key = true,
 			},
 			term_colors = true,
 			transparent_background = true,
@@ -123,5 +168,10 @@ return {
 			},
 		},
 		config = true,
+	},
+	{
+		"fladson/vim-kitty",
+		ft = "kitty",
+		tag = "v1.4", -- You can select a tagged version
 	},
 }

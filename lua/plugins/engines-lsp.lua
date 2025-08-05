@@ -1,14 +1,11 @@
+---@source https://github.com/folke/lazydev.nvim
 return {
 	{
-		"williamboman/mason.nvim",
+		"folke/lazydev.nvim",
+		ft = "lua",
 		opts = {
-			ui = {
-				border = "rounded",
-				icons = {
-					package_installed = "",
-					package_uninstalled = "",
-					package_pending = "",
-				},
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 			},
 		},
 	},

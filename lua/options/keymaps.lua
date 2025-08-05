@@ -12,12 +12,12 @@ end, opts)
 -- source current lua file
 keymap.set("n", "<leader>sc", function()
 	return vim.cmd("source %")
-end, opts)
+end, vim.tbl_deep_extend("force", opts, { desc = "Source Lua Files" }))
 
 -- save and exit all
 keymap.set("n", "<leader>Q", function()
 	return vim.cmd("wqa")
-end, opts)
+end, vim.tbl_deep_extend("force", opts, { desc = "Quits and saves everything" }))
 
 -- window navigation
 keymap.set("n", "sh", "<C-w>h")
