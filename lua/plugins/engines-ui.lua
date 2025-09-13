@@ -14,7 +14,7 @@ return {
 		config = function(_, opts)
 			opts = opts or {}
 			local bufferline = require("bufferline")
-			local highlights = require("catppuccin.groups.integrations.bufferline").get()
+			local highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
 
 			bufferline.setup({
 				highlights = highlights,
@@ -45,7 +45,21 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
+
+		---@module "noice.config"
 		opts = {
+			routes = {
+				{
+					filter = { event = "msg_show", kind = "shell_out" },
+					view = "notify",
+					opts = { level = "info", title = "stdout" },
+				},
+				{
+					filter = { event = "msg_show", kind = "shell_err" },
+					view = "notify",
+					opts = { level = "error", title = "stderr" },
+				},
+			},
 			lsp = {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
