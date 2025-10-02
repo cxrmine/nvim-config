@@ -14,7 +14,7 @@ return {
 		config = function(_, opts)
 			opts = opts or {}
 			local bufferline = require("bufferline")
-			local highlights = require("catppuccin.groups.integrations.bufferline").get()
+			local highlights = require("catppuccin.special.bufferline").get_theme()
 
 			bufferline.setup({
 				highlights = highlights,
@@ -70,7 +70,7 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			theme = "",
+			theme = "auto",
 		},
 	},
 	{

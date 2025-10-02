@@ -25,9 +25,9 @@ return {
 				ignore_install = { "javascript" },
 				highlight = {
 					enable = true,
-					disable = function(lang, buf)
+					disable = function(_, buf)
 						local max_filesize = 100 * 1024
-						local s, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+						local s, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
 						if s and stats and stats.size > max_filesize then
 							return true
 						end
@@ -70,45 +70,6 @@ return {
 		end,
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 4000,
-
-		---@module "catppuccin"
-		---@type CatppuccinOptions
-		opts = {
-			float = {
-				solid = true,
-				transparent = false,
-			},
-			---@type CtpIntegrations
-			integrations = {
-				noice = true,
-				gitsigns = true,
-				treesitter = true,
-				notify = true,
-				blink_cmp = {
-					style = "bordered",
-				},
-				treesitter_context = true,
-				telescope = {
-					enabled = true,
-				},
-				which_key = true,
-			},
-			term_colors = true,
-			transparent_background = true,
-
-			---@type CtpStyles
-			styles = {
-				comments = { "italic" },
-				booleans = { "bold" },
-				types = { "bold" },
-			},
-		},
-	},
-	{
 		"loctvl842/monokai-pro.nvim",
 		opts = {
 			background_clear = {
@@ -127,25 +88,6 @@ return {
 					Type = { fg = c.base.cyan },
 				}
 			end,
-		},
-	},
-	{
-		"folke/tokyonight.nvim",
-		priority = 4000,
-		lazy = false,
-		opts = {
-			style = "moon",
-			light_style = "day",
-			styles = {
-				comments = { italic = true },
-			},
-			plugins = {
-				bufferline = true,
-				telescope = true,
-				cmp = true,
-				lazy = true,
-				treesitter = true,
-			},
 		},
 	},
 	{
