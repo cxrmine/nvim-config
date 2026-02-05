@@ -1,5 +1,8 @@
 return {
 	{
+		"cacharle/c_formatter_42.vim",
+	},
+	{
 		"folke/todo-comments.nvim",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },

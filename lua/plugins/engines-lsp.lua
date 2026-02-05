@@ -15,9 +15,23 @@ return {
 		opts = {
 			servers = { "clangd", "pyright", "lua_ls", "ts_ls", "jsonls" },
 		},
+		dependencies = {
+			-- main one
+			{ "ms-jpq/coq_nvim", branch = "coq" },
+			-- 9000+ Snippets
+			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+		},
+		init = function()
+			vim.g.coq_settings = {
+				auto_start = true,
+				completion = {
+					always = true,
+				},
+			}
+		end,
 		config = function(_, opts)
 			opts = opts or {}
-			local capabilities = require("blink-cmp").get_lsp_capabilities()
+			local capabilities = require("coq").lsp_ensure_capabilities()
 
 			if opts.servers == nil then
 				return print("Error: No configured LSP servers")
