@@ -3,7 +3,6 @@ return {
 	name = "catppuccin",
 	lazy = false,
 	priority = 4000,
-
 	---@module "catppuccin"
 	---@type CatppuccinOptions
 	opts = {
@@ -31,7 +30,6 @@ return {
 		term_colors = true,
 		transparent_background = true,
 		auto_integrations = true,
-
 		---@type CtpStyles
 		styles = {
 			comments = { "italic" },
