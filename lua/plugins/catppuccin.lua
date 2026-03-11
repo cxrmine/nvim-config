@@ -34,6 +34,7 @@ return {
 		styles = {
 			comments = { "bold" },
 			miscs = { "bold" },
+			conditionals = { "bold" },
 		},
 	},
 }
