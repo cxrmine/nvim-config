@@ -33,8 +33,6 @@ return {
 		---@type CtpStyles
 		styles = {
 			comments = { "italic" },
-			booleans = { "bold" },
-			types = { "bold" },
 		},
 	},
 }
