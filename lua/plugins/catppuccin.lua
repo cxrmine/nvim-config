@@ -32,7 +32,8 @@ return {
 		auto_integrations = true,
 		---@type CtpStyles
 		styles = {
-			comments = { "italic" },
+			comments = { "bold" },
+			miscs = { "bold" },
 		},
 	},
 }
