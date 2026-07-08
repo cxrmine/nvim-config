@@ -1,7 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main";
 	config = function()
-		local ts = require("nvim-treesitter.configs")
+		local ts = require("nvim-treesitter")
 		ts.setup({
 			modules = {},
 			auto_install = true,
